@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How I work — a transparent breakdown of my process, timeline, and what to expect when you work with Balanced Socials.">
+<meta name="theme-color" content="#F1EFEB">
+<title>How I Work, Balanced Socials</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F1EFEB; --light-beige: #F5F3F0; --orange: #F17C1C; --orange-rust: #D55C2A;
+  --teal: #549A94; --slate: #839193; --brown-mid: #976746;
+  --text-dark: #2C1810; --text-mid: #5A3E2B; --nav-h: 72px; --max-w: 1160px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--text-dark); font-family: 'Lato', sans-serif; font-weight: 300; line-height: 1.65; padding-top: var(--nav-h); }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+.label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); }
+
+/* NAV */
+.site-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: var(--cream); border-bottom: 1px solid rgba(44,24,16,0.08); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; z-index: 900; }
+.nav-logo { font-family: 'EB Garamond', serif; font-size: 20px; font-weight: 500; color: var(--text-dark); }
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mid); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--orange); }
+.nav-cta { background: var(--orange); color: #fff !important; padding: 10px 22px; border-radius: 2px; }
+.nav-cta:hover { opacity: 0.85; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--light-beige); z-index: 890; flex-direction: column; padding: 100px 32px 48px; }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dark); padding: 18px 0; border-bottom: 1px solid rgba(44,24,16,0.1); transition: color 0.2s; }
+.mobile-nav a:hover { color: var(--orange); }
+.mobile-nav .mob-cta { margin-top: 32px; background: var(--orange); color: #fff; padding: 16px 24px; text-align: center; border-radius: 2px; border-bottom: none; }
+@media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } .site-nav { padding: 0 20px; } }
+
+/* BUTTONS */
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; border: 2px solid var(--orange); cursor: pointer; transition: all 0.2s; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--text-dark); font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; border: 2px solid var(--text-dark); cursor: pointer; transition: all 0.2s; }
+.btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+/* PAGE HERO */
+.page-hero { padding: 72px 32px 64px; border-bottom: 1px solid rgba(44,24,16,0.08); }
+.page-hero-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.page-hero-inner .label { display: block; margin-bottom: 18px; }
+.page-hero-inner h1 { font-family: 'EB Garamond', serif; font-size: clamp(36px, 5vw, 60px); line-height: 1.1; color: var(--text-dark); margin-bottom: 20px; }
+.page-hero-inner h1 em { font-style: italic; color: var(--orange); }
+.page-hero-inner p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 36px; }
+@media (max-width: 600px) { .page-hero { padding: 48px 20px 48px; } }
+
+/* PROCESS TIMELINE */
+.process-section { padding: 80px 32px; max-width: var(--max-w); margin: 0 auto; }
+.process-section > .label { display: block; margin-bottom: 14px; }
+.process-section > h2 { font-family: 'EB Garamond', serif; font-size: clamp(26px, 3.5vw, 44px); color: var(--text-dark); margin-bottom: 56px; }
+
+.timeline { display: flex; flex-direction: column; gap: 0; }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  position: relative;
+  padding-bottom: 48px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-left { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+.step-circle {
+  width: 48px; height: 48px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  color: #fff;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-line {
+  width: 2px;
+  flex: 1;
+  background: rgba(241,124,28,0.2);
+  margin-top: 0;
+}
+
+.timeline-item:last-child .step-line { display: none; }
+
+.timeline-right { padding-top: 10px; }
+
+.timeline-right .phase { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+
+.timeline-right h3 { font-family: 'EB Garamond', serif; font-size: 26px; color: var(--text-dark); margin-bottom: 10px; }
+
+.timeline-right .duration { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate); margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+
+.timeline-right p { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+
+.deliverables { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+
+.deliverable-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dark); background: rgba(241,124,28,0.08); border: 1px solid rgba(241,124,28,0.2); border-radius: 2px; padding: 5px 10px; }
+
+@media (max-width: 600px) {
+  .process-section { padding: 56px 20px; }
+  .timeline-item { grid-template-columns: 48px 1fr; gap: 20px; }
+  .step-circle { width: 36px; height: 36px; font-size: 14px; }
+}
+
+
+/* Step circle entrance animation */
+@keyframes stepCircleIn {
+  0%   { transform: scale(0) rotate(-90deg); opacity: 0; }
+  60%  { transform: scale(1.18) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes stepLineGrow {
+  from { transform: scaleY(0); transform-origin: top; }
+  to   { transform: scaleY(1); transform-origin: top; }
+}
+.step-circle {
+  opacity: 0;
+  transition: none;
+}
+.step-circle.animate-in {
+  animation: stepCircleIn 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+.step-line {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.7s ease 0.3s;
+}
+.step-line.animate-in {
+  transform: scaleY(1);
+}
+
+/* TOOLS SECTION */
+.tools-section { background: var(--light-beige); padding: 72px 32px; border-top: 1px solid rgba(44,24,16,0.07); border-bottom: 1px solid rgba(44,24,16,0.07); }
+.tools-inner { max-width: var(--max-w); margin: 0 auto; }
+.tools-inner .label { display: block; margin-bottom: 14px; }
+.tools-inner h2 { font-family: 'EB Garamond', serif; font-size: clamp(26px, 3vw, 40px); color: var(--text-dark); margin-bottom: 48px; }
+.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.tool-item { background: var(--cream); padding: 24px; }
+.tool-emoji { display: none; }
+.tool-item h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 6px; }
+.tool-item p { font-size: 13px; color: var(--slate); line-height: 1.6; }
+@media (max-width: 860px) { .tools-grid { grid-template-columns: 1fr 1fr; } .tools-section { padding: 56px 24px; } }
+@media (max-width: 480px) { .tools-grid { grid-template-columns: 1fr; } }
+
+/* EXPECTATIONS */
+.expect-section { padding: 80px 32px; max-width: var(--max-w); margin: 0 auto; }
+.expect-section .label { display: block; margin-bottom: 14px; }
+.expect-section > h2 { font-family: 'EB Garamond', serif; font-size: clamp(26px, 3.5vw, 44px); color: var(--text-dark); margin-bottom: 48px; }
+.expect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.expect-card { border: 1.5px solid rgba(44,24,16,0.1); border-radius: 3px; padding: 22px 24px; }
+.expect-card h3 { font-family: 'EB Garamond', serif; font-size: 19px; color: var(--text-dark); margin-bottom: 10px; }
+.expect-card p { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0; }
+.expect-card p:last-child { margin-bottom: 0; }
+@media (max-width: 700px) { .expect-grid { grid-template-columns: 1fr; } .expect-section { padding: 56px 20px; } }
+
+/* FAQ */
+.faq-section { background: var(--light-beige); padding: 72px 32px; border-top: 1px solid rgba(44,24,16,0.07); }
+.faq-inner { max-width: 720px; margin: 0 auto; }
+.faq-inner .label { display: block; margin-bottom: 14px; }
+.faq-inner h2 { font-family: 'EB Garamond', serif; font-size: clamp(26px, 3vw, 40px); color: var(--text-dark); margin-bottom: 40px; }
+.faq-item { border-bottom: 1px solid rgba(44,24,16,0.1); }
+.faq-q { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 16px; }
+.faq-q span { font-size: 15px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
+.faq-icon { font-size: 18px; color: var(--orange); flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { font-size: 14px; color: var(--text-mid); line-height: 1.8; padding-bottom: 20px; display: none; }
+.faq-item.open .faq-a { display: block; }
+@media (max-width: 600px) { .faq-section { padding: 56px 20px; } }
+
+/* CTA & FOOTER */
+.cta-banner { padding: 80px 32px; background: linear-gradient(135deg, rgba(241,124,28,0.06) 0%, rgba(84,154,148,0.05) 100%); border-top: 1px solid rgba(151,103,70,0.1); text-align: center; }
+.cta-banner h2 { font-family: 'EB Garamond', serif; font-size: clamp(28px, 4vw, 48px); color: var(--text-dark); margin-bottom: 16px; max-width: 640px; margin-left: auto; margin-right: auto; }
+.cta-banner h2 em { font-style: italic; color: var(--orange); }
+.cta-banner p { font-size: 15px; color: var(--text-mid); max-width: 500px; margin: 0 auto 36px; line-height: 1.75; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+footer { background: #2A1E14; color: rgba(255,255,255,0.6); padding: 56px 32px 32px; }
+.footer-grid { max-width: var(--max-w); margin: 0 auto 48px; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; }
+.footer-brand .logo { font-family: 'EB Garamond', serif; font-size: 22px; color: #fff; margin-bottom: 14px; }
+.footer-brand .logo span { color: var(--orange); }
+.footer-brand p { font-size: 13px; line-height: 1.7; max-width: 280px; margin-bottom: 24px; }
+.footer-col h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; margin-bottom: 18px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { font-size: 13px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer-col a:hover { color: var(--orange); }
+.footer-bottom { max-width: var(--max-w); margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer-bottom p { font-size: 11px; letter-spacing: 0.06em; }
+.footer-bottom a { color: var(--orange); }
+@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } footer { padding: 48px 24px 28px; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ══════════════════════════════════
+   UI/UX ENHANCEMENTS — ALL PAGES
+══════════════════════════════════ */
+
+/* Better font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* label line removed */
+
+/* Nav link underline animation */
+.nav-links a:not(.nav-cta) {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--orange);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a.active:not(.nav-cta)::after {
+  width: 100%;
+}
+
+/* Nav logo hover */
+.nav-logo { transition: opacity 0.2s; }
+.nav-logo:hover { opacity: 0.78; }
+
+/* Nav CTA elevation */
+.nav-cta {
+  box-shadow: 0 2px 10px rgba(241,124,28,0.22) !important;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-cta:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(241,124,28,0.32) !important;
+}
+.nav-cta:active { transform: translateY(0) !important; }
+
+/* Primary button lift + glow */
+.btn-primary {
+  transition: opacity 0.2s, transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s !important;
+  box-shadow: 0 2px 10px rgba(241,124,28,0.0);
+}
+.btn-primary:hover {
+  opacity: 1 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 28px rgba(241,124,28,0.30) !important;
+}
+.btn-primary:active {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(241,124,28,0.20) !important;
+}
+
+/* Outline button lift */
+.btn-outline {
+  transition: all 0.22s cubic-bezier(0.34,1.56,0.64,1) !important;
+}
+.btn-outline:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(44,24,16,0.08) !important;
+}
+.btn-outline:active { transform: translateY(0) !important; }
+
+/* Footer link slide */
+.footer-col a {
+  display: inline-block;
+  transition: color 0.2s, transform 0.2s !important;
+}
+.footer-col a:hover {
+  transform: translateX(4px) !important;
+}
+
+/* Footer brand logo */
+.footer-brand .logo { transition: opacity 0.2s; }
+.footer-brand .logo:hover { opacity: 0.75; }
+
+/* Mobile nav smooth open */
+.mobile-nav {
+  transition: opacity 0.25s ease;
+  opacity: 0;
+}
+.mobile-nav.open {
+  opacity: 1;
+}
+
+/* Hamburger lines smooth */
+.hamburger span {
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s;
+}
+
+/* ══ HOW I WORK SPECIFIC ══ */
+
+/* Step card hover */
+.step-card, .step-block, .process-card {
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.step-card:hover, .step-block:hover, .process-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(44,24,16,0.07);
+}
+
+/* Timeline connector refinement */
+.step-num, .step-number {
+  transition: color 0.25s;
+}
+
+/* FAQ items */
+.faq-q { transition: color 0.2s; }
+.faq-q:hover { color: var(--orange); }
+
+/* Guarantee / callout box hover */
+.callout-box, .guarantee-box {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.callout-box:hover, .guarantee-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(241,124,28,0.08);
+}
+
+
+/* ══ TYPOGRAPHY REFINEMENTS ══ */
+
+/* Headings: optical kerning + tighter tracking */
+h1, h2, h3 {
+  font-kerning: normal;
+  font-optical-sizing: auto;
+}
+h1 { letter-spacing: -0.02em; }
+h2 { letter-spacing: -0.015em; }
+
+/* Improved body reading rhythm */
+p {
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Section header spacing rhythm */
+.section-header {
+  position: relative;
+}
+.section-header .label {
+  margin-bottom: 14px;
+  display: block;
+}
+.section-header h2 {
+  line-height: 1.12;
+}
+.section-header p {
+  margin-top: 14px;
+  line-height: 1.75;
+}
+
+/* Page hero h1 optical size */
+.page-hero h1,
+.page-hero-text h1 {
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+}
+
+/* Pull quote serif refinement */
+.story-pull,
+.testi-quote {
+  font-feature-settings: "swsh" 1, "liga" 1;
+  letter-spacing: 0.005em;
+}
+
+/* Footer heading tracking */
+.footer-col h4 {
+  letter-spacing: 0.2em;
+}
+
+/* Small caps labels */
+.testi-name,
+.testi-role,
+.nav-card h3,
+.detail-label,
+.cred-label {
+  font-feature-settings: "c2sc" 1, "smcp" 1;
+}
+
+
+/* Logo images */
+.nav-logo { display: flex; align-items: center; }
+.nav-logo-img { height: 54px; width: auto; display: block; }
+.nav-logo-text { font-family: 'EB Garamond', serif; font-size: 20px; font-weight: 500; color: var(--text-dark); letter-spacing: 0.02em; display: none; }
+.nav-logo-text span { color: var(--orange); }
+.footer-logo-img { height: 72px; width: auto; display: block; margin-bottom: 14px; }
+.footer-logo-text { font-family: 'EB Garamond', serif; font-size: 22px; color: #fff; display: none; }
+.footer-logo-text span { color: var(--orange); }
+.logo { display: flex; align-items: flex-start; flex-direction: column; }
+
+
+
+
+/* ── ORANGE BUTTON SHIMMER — injected per-page to beat specificity ── */
+@keyframes orangeShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.btn-primary,
+.nav-cta {
+  background: linear-gradient(90deg,
+    #F17C1C 0%, #F7962E 30%, #E86A10 55%, #F7962E 75%, #F17C1C 100%
+  ) !important;
+  background-size: 200% 100% !important;
+  border-color: transparent !important;
+  animation: orangeShimmer 3s linear infinite !important;
+  transition: transform 0.18s ease, box-shadow 0.2s ease !important;
+}
+.btn-primary:hover,
+.nav-cta:hover {
+  opacity: 1 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(241,124,28,0.4) !important;
+}
+</style>
+  <link rel="stylesheet" href="cursor.css">
+  <link rel="stylesheet" href="texture.css">
+</head>
+<body>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="grain-overlay" aria-hidden="true"></div>
+
+<nav class="site-nav">
+  <a href="home.html" class="nav-logo"><img src="logo-orange.png" alt="Balanced Socials" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="nav-logo-text" style="display:none">Balanced <span>Socials</span></span></a>
+  <ul class="nav-links">
+    <li><a href="about-founder.html">Meet the Founder</a></li>
+    <li><a href="how-we-work.html" class="active">How I Work</a></li>
+    <li><a href="results.html">Testimonials</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html" class="nav-cta">Work With Me →</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="about-founder.html" onclick="toggleNav()">Meet the Founder</a>
+  <a href="how-we-work.html" onclick="toggleNav()">How I Work</a>
+  <a href="results.html" onclick="toggleNav()">Testimonials</a>
+  <a href="services.html" onclick="toggleNav()">Services</a>
+  <a href="portfolio.html" onclick="toggleNav()">Portfolio</a>
+  <a href="contact.html" class="mob-cta" onclick="toggleNav()">Work With Me →</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="label">My Process</span>
+    <h1>A clear system. <em>No guesswork.</em></h1>
+    <p>I'm transparent about how I work, because the best client relationships are built on clarity from day one. Here's exactly what to expect when you work with me.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <a href="contact.html" class="btn-primary">Start the Conversation →</a>
+      <a href="services.html" class="btn-outline">See Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS TIMELINE -->
+<section class="process-section">
+  <span class="label">Step by Step</span>
+  <h2>From first conversation to ongoing results</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="step-circle">1</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="phase">Getting Started</div>
+        <h3>Initial Enquiry</h3>
+        <div class="duration">⏱ 30–45 minutes · Free</div>
+        <p>We start with your enquiry, not a pitch. We'll ask about your business, your goals, your current social media challenges, and what you've already tried. We'll be honest about whether we think we can help, and what that help would look like.</p>
+        <p>By the end of our initial exchange, you'll have a clearer picture of your situation even if we don't end up working together.</p>
+        <div class="deliverables">
+          <span class="deliverable-tag">No obligation</span>
+          <span class="deliverable-tag">Honest advice</span>
+          <span class="deliverable-tag">Clear next steps</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="step-circle">2</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="phase">Onboarding</div>
+        <h3>Brand Deep Dive</h3>
+        <div class="duration">⏱ Week 1</div>
+        <p>If we decide to move forward, we go deep into your brand. We review your existing content, your competitors, your audience, and, most importantly, the way you communicate. We're building a complete picture before we create a single piece of content.</p>
+        <div class="deliverables">
+          <span class="deliverable-tag">Brand voice audit</span>
+          <span class="deliverable-tag">Competitor analysis</span>
+          <span class="deliverable-tag">Audience profile</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="step-circle">3</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="phase">Strategy</div>
+        <h3>Content Strategy Build</h3>
+        <div class="duration">⏱ Week 2</div>
+        <p>We build a custom content strategy, your content pillars, posting frequency, platform priorities, content formats, and a 30-day content plan. You review and approve before anything goes live. Nothing is templated; everything is built specifically for your business.</p>
+        <div class="deliverables">
+          <span class="deliverable-tag">Content pillars</span>
+          <span class="deliverable-tag">30-day plan</span>
+          <span class="deliverable-tag">Platform strategy</span>
+          <span class="deliverable-tag">Client approval</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="step-circle">4</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="phase">Execution</div>
+        <h3>Content Creation & Publishing</h3>
+        <div class="duration">⏱ Ongoing</div>
+        <p>We create, schedule, and publish your content across your platforms, maintaining your brand voice consistently. You'll see content before it goes live and can request changes. We handle community management, hashtag strategy, and all the details you don't want to think about.</p>
+        <div class="deliverables">
+          <span class="deliverable-tag">Content creation</span>
+          <span class="deliverable-tag">Scheduling</span>
+          <span class="deliverable-tag">Community management</span>
+          <span class="deliverable-tag">Preview & approval</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="step-circle">5</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="timeline-right">
+        <div class="phase">Review</div>
+        <h3>Monthly Reporting & Optimisation</h3>
+        <div class="duration">⏱ Every month</div>
+        <p>At the end of each month, we review what worked, what didn't, and why. You get a clear report with the metrics that matter, not vanity numbers, but reach, engagement, leads, and progress toward your goals. We use this to refine the strategy for the next month.</p>
+        <div class="deliverables">
+          <span class="deliverable-tag">Monthly report</span>
+          <span class="deliverable-tag">Strategy review</span>
+          <span class="deliverable-tag">Goal tracking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="tools-inner">
+    <span class="label">What I Use</span>
+    <h2>Platforms &amp; tools I work with</h2>
+    <p style="font-size:15px;color:var(--text-mid);margin-bottom:40px;max-width:640px;line-height:1.75;">I don't want to just rely on tools that do the job. I use the right ones strategically, because the goal isn't to produce content. It's to produce excellent content that actually moves your business forward.</p>
+    <div class="tools-grid">
+      <div class="tool-item">
+        <h4>Instagram</h4>
+        <p>My primary platform. Feed posts, Reels, Stories, and a strategy built around how the algorithm actually works right now.</p>
+      </div>
+      <div class="tool-item">
+        <h4>Canva</h4>
+        <p>On-brand visual design for graphics, carousels, and story templates that look custom, not cookie-cutter.</p>
+      </div>
+      <div class="tool-item">
+        <h4>Adobe Creative Suite</h4>
+        <p>For more refined design work, video editing, and creative assets that need a level of polish beyond the basics.</p>
+      </div>
+      <div class="tool-item">
+        <h4>Rella</h4>
+        <p>Content planning and scheduling built specifically for Instagram-first workflows. Clean, visual, and genuinely useful.</p>
+      </div>
+      <div class="tool-item">
+        <h4>Custom-Coded Tools</h4>
+        <p>Where necessary, I build and integrate bespoke solutions specific to each client's workflow. No sloppy workarounds, no unnecessary complexity.</p>
+      </div>
+      <div class="tool-item">
+        <h4>Expanding Marketing Knowledge</h4>
+        <p>An ever-expanding set of skills and instincts built across years of real-world experience. This is the tool that actually makes the difference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect-section">
+  <span class="label">What You Can Expect</span>
+  <h2>The practical details</h2>
+  <div class="expect-grid">
+    <div class="expect-card">
+      <h3>Communication</h3>
+      <p>You'll have a direct line to me. I respond within 24 hours on business days, almost always faster.</p>
+    </div>
+    <div class="expect-card">
+      <h3>Content Approval</h3>
+      <p>Nothing goes live without your sign-off. I batch content a week ahead so you're never rushed. Your brand, your final say, always.</p>
+    </div>
+    <div class="expect-card">
+      <h3>Timeline to Results</h3>
+      <p>Better consistency and content quality from the first week. Engagement improvements within 1 to 3 months. I'll always be straight with you about what's realistic — results take time, and I'd rather set honest expectations than overpromise.</p>
+    </div>
+    <div class="expect-card">
+      <h3>Contract & Flexibility</h3>
+      <p>Management clients start on a 3-month minimum, because good strategy needs time. After that, rolling monthly with 30 days notice. Consulting and strategy sessions are one-off, no minimum.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <span class="label">FAQs</span>
+    <h2>Common questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How involved do I need to be once we start?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <p class="faq-a">As involved as you want to be. Some clients prefer to review every post; others give us full autonomy after the first month. We'll find the right rhythm for you — occasional quick approvals are all that's needed.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Do I need to provide content (photos, videos)?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <p class="faq-a">It depends on your service package. For full management clients, we'll discuss what content you can provide and supplement with designed graphics and curated content. For businesses that want a more personal, photo-heavy feed, we'll guide you on exactly what to capture and how.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What if I want to change direction mid-contract?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <p class="faq-a">That's fine, businesses evolve, and your social media strategy should too. Our monthly reporting process is specifically designed to review and adjust direction based on what's working. Major pivots can be raised in your monthly check-in and we'll adapt the strategy accordingly.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Do you work with businesses outside Australia?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <p class="faq-a">Yes, we work with clients across time zones. All communication is asynchronous-friendly and we'll work around your schedule wherever you are.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How do you maintain my brand voice?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <p class="faq-a">We invest heavily in understanding how you communicate during onboarding, reviewing your existing content, asking detailed questions about your tone and language, and often having a conversation that we use to analyse your natural communication style. We document this in a brand voice guide that everything is written against. After the first month, most clients say they can't tell the difference.</p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What happens at the end of the contract?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <p class="faq-a">After the initial 3-month period, contracts roll monthly. You can continue month-to-month with 30 days notice to cancel. We'll always give you enough notice if we're no longer able to take on your work, and we'll provide a full handover document and content archive so you're never left scrambling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <h2>Sound like the kind of process you've been <em>looking for?</em></h2>
+  <p>Let's start with a conversation. Tell me about your business and I'll give you an honest answer about what working together could look like.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn-primary">Book a Initial Enquiry →</a>
+    <a href="services.html" class="btn-outline">See Our Services</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><img src="logo-cream.png" alt="Balanced Socials" class="footer-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="footer-logo-text" style="display:none">Balanced <span>Socials</span></span></div>
+      <p>Instagram-first social media management and consulting for service-based business owners, based in Australia and working globally.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="about-founder.html">Meet the Founder</a></li>
+        <li><a href="how-we-work.html">How I Work</a></li>
+        <li><a href="results.html">Testimonials</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Free Tools</h4>
+      <ul>
+        <li><a href="https://shop.beacons.ai/balancedsocials/fea9d5cd-47b4-4e14-a89f-2ade38c5ae25" target="_blank">Content Blueprint</a></li>
+        <li><a href="https://shop.beacons.ai/balancedsocials/27e22b5f-8c47-4c2e-b04e-3dce11e3752d" target="_blank">Audit Checklist</a></li>
+        <li><a href="https://shop.beacons.ai/balancedsocials/f7bf8d6d-eca5-448a-8d7d-ef218e88b74b" target="_blank">ROI Reality Check</a></li>
+        <li><a href="https://shop.beacons.ai/balancedsocials/321dd6b5-8a18-408b-b466-99b4bee10d17" target="_blank">Profile Scorecard</a></li>
+        <li><a href="https://shop.beacons.ai/balancedsocials/049ddbdd-cb24-4a77-8cd4-52ad503d9604" target="_blank">Should I Hire?</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Along</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/balancedsocials" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2025 Balanced Socials. All rights reserved.</p>
+    <p>Built by Balanced Socials</p>
+  </div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('mobileNav').classList.toggle('open'); }
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Scroll fade
+// Animate step circles on scroll
+const stepCircles = document.querySelectorAll('.step-circle');
+const stepLines = document.querySelectorAll('.step-line');
+if (stepCircles.length) {
+  const stepObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = [...stepCircles].indexOf(e.target);
+        setTimeout(() => {
+          e.target.classList.add('animate-in');
+          if (stepLines[idx]) stepLines[idx].classList.add('animate-in');
+        }, idx * 120);
+        stepObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  stepCircles.forEach(el => stepObs.observe(el));
+}
+
+if (!window._fadeInit) {
+  window._fadeInit = true;
+  const _fEls = document.querySelectorAll('.fade-in');
+  if (_fEls.length) {
+    const _obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    _fEls.forEach(el => _obs.observe(el));
+  }
+}
+
+</script>
+  <script src="cursor.js"></script>
+</body>
+</html>
