@@ -1,0 +1,39 @@
+/* ── GLOBAL CANVAS / LINEN TEXTURE ── */
+
+/* Fixed grain overlay — two noise layers at different scales for a
+   richer, more organic linen/canvas feel. mix-blend-mode: multiply
+   darkens only the grain pattern; the cream background colour stays
+   completely unchanged. Sits above all content but below cursors.  */
+#grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8999;
+  background-image:
+    /* Fine grain — primary canvas weave */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.70' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23a)' opacity='0.45'/%3E%3C/svg%3E"),
+    /* Coarser layer — cloth weave structure */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.35' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23b)' opacity='0.25'/%3E%3C/svg%3E");
+  background-size: 220px 220px, 160px 160px;
+  background-repeat: repeat;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+}
+
+/* ── EMBEDDED / DEBOSSED TEXT FEEL ── */
+/* Letterpress effect — highlight 1px above each letter, shadow 1px below.
+   Makes type feel pressed into the canvas, not sitting on top of it.    */
+h1, h2, h3, h4 {
+  text-shadow:
+    0  1px 1px rgba(255, 250, 244, 0.45),
+    0 -1px 1px rgba(10,  4,  0,  0.10);
+}
+
+/* Inverted for elements on dark backgrounds (footer, dark sections) */
+.dark-section h1, .dark-section h2, .dark-section h3, .dark-section h4,
+footer h1, footer h2, footer h3,
+.footer-inner h1, .footer-inner h2, .footer-inner h3 {
+  text-shadow:
+    0  1px 1px rgba(255, 255, 255, 0.07),
+    0 -1px 1px rgba(0,   0,   0,  0.30);
+}
