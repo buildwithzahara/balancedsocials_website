@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F1EFEB">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Balanced Socials">
+<title>Balanced Socials — Social Media Management & Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<script>
+  (function(){
+    var m={name:"Balanced Socials",short_name:"Balanced Socials",description:"Social media management & consulting for business owners who want creative freedom with strategic thinking",start_url:"./index.html",display:"standalone",orientation:"portrait",background_color:"#F1EFEB",theme_color:"#F17C1C",icons:[{src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%23F17C1C' rx='24'/%3E%3Ctext x='96' y='118' font-family='Georgia,serif' font-size='72' font-weight='bold' text-anchor='middle' fill='white'%3EBS%3C/text%3E%3C/svg%3E",sizes:"192x192",type:"image/svg+xml"},{src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23F17C1C' rx='60'/%3E%3Ctext x='256' y='316' font-family='Georgia,serif' font-size='200' font-weight='bold' text-anchor='middle' fill='white'%3EBS%3C/text%3E%3C/svg%3E",sizes:"512x512",type:"image/svg+xml"}]};
+    try{var b=new Blob([JSON.stringify(m)],{type:"application/manifest+json"}),u=URL.createObjectURL(b),l=document.createElement("link");l.rel="manifest";l.href=u;document.head.appendChild(l);}catch(e){}
+  })();
+</script>
+<style>
+  :root {
+    --cream: #F1EFEB;
+    --orange-primary: #F17C1C;
+    --orange-rust: #D55C2A;
+    --slate: #839193;
+    --teal: #549A94;
+    --brown-mid: #976746;
+    --text-dark: #2C1810;
+    --text-mid: #5A3E2B;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 80px;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="none" stroke="%232C1810" stroke-width="2"/></svg>') 16 16, auto;
+  }
+
+  /* ── Sticky header gradient fade ── */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--cream) 0%, var(--cream) 70%, rgba(241,239,235,0.8) 100%);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* ── Menu Button ── */
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .menu-btn span {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    transition: color 0.2s;
+  }
+
+  #menu-icon { font-size: 20px; }
+
+  #menu-back { font-size: 10px; }
+
+  .menu-btn:hover span { color: var(--orange-primary); }
+
+  /* ── Top Right CTA ── */
+  .top-cta {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: linear-gradient(90deg, #F17C1C 0%, #F2893C 25%, #E86A10 50%, #F2893C 75%, #F17C1C 100%);
+    background-size: 200% 100%;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 14px 24px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    animation: subtleOrangeGradient 6s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(241,124,28,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .top-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(241,124,28,0.4);
+  }
+
+  /* ── Mobile Menu ── */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F5F3F0;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    padding: 100px 24px 40px;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .menu-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(44,24,16,0.1);
+    transition: color 0.2s;
+  }
+
+  .menu-link:hover { color: var(--orange-primary); }
+
+  /* ── Hero / Header ── */
+  .header {
+    text-align: center;
+    padding: 40px 24px;
+  }
+
+  .header h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(44,24,16,0.1);
+  }
+
+  .header p {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  /* ── Link Buttons Section (After Header) ── */
+  .links-section {
+    padding: 40px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .link-btn {
+    background: transparent;
+    border: 1.5px solid var(--text-dark);
+    border-radius: 2px;
+    padding: 18px 24px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(44,24,16,0.1);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(44,24,16,0.08);
+  }
+
+  .link-btn:first-child {
+    background: linear-gradient(90deg, #F17C1C 0%, #F2893C 25%, #E86A10 50%, #F2893C 75%, #F17C1C 100%);
+    background-size: 200% 100%;
+    color: #fff;
+    border-color: transparent;
+    animation: subtleOrangeGradient 6s ease-in-out infinite;
+    text-shadow: 1px 1px 2px rgba(44,24,16,0.2);
+    box-shadow: 0 4px 12px rgba(241,124,28,0.25);
+  }
+
+  @keyframes subtleOrangeGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .link-btn:first-child:hover {
+    background: linear-gradient(90deg, #E86A10 0%, #F0893A 25%, #D55C2A 50%, #F0893A 75%, #E86A10 100%);
+    border-color: transparent;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(241,124,28,0.3);
+  }
+
+  .link-btn:not(:first-child):hover {
+    border-color: var(--orange-primary);
+    color: var(--orange-primary);
+    background: rgba(241,124,28,0.04);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(241,124,28,0.12);
+  }
+
+  .link-btn::after {
+    content: '→';
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── Freebies Carousel ── */
+  .freebies-section {
+    padding: 60px 24px;
+    background: linear-gradient(135deg, rgba(241,124,28,0.06) 0%, rgba(84,154,148,0.04) 100%);
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  .freebies-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .section-header h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(44,24,16,0.1);
+  }
+
+  .section-header p {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-container::before,
+  .carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(241,239,235,0.8), transparent);
+  }
+
+  .carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(241,239,235,0.8), transparent);
+  }
+
+  .carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 10px 0;
+  }
+
+  .carousel::-webkit-scrollbar { display: none; }
+
+  .freebie-card {
+    background: #fff;
+    border-radius: 3px;
+    border: 1.5px solid rgba(44,24,16,0.1);
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .freebie-card:hover {
+    border-color: var(--orange-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(241,124,28,0.1);
+  }
+
+  .freebie-image {
+    width: 100%;
+    height: 180px;
+    background: #F5F3F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-bottom: 1.5px solid rgba(151,103,70,0.1);
+    overflow: hidden;
+  }
+
+  .freebie-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .freebie-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .freebie-card h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .freebie-card p {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  .freebie-cta {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    margin-top: auto;
+    background: var(--orange-primary);
+    border: none;
+    border-radius: 2px;
+    padding: 8px 12px;
+    cursor: pointer;
+    text-align: left;
+    display: inline-block;
+    transition: opacity 0.2s;
+    text-decoration: none;
+  }
+
+  .freebie-cta:hover { opacity: 0.85; }
+
+  @media (max-width: 600px) {
+    .freebie-card { width: 190px; }
+  }
+
+  /* ── Reviews Carousel ── */
+  .reviews-section {
+    padding: 60px 24px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .reviews-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .reviews-header h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(44,24,16,0.1);
+  }
+
+  .reviews-header p {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .reviews-carousel-container {
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  .reviews-carousel-container::before,
+  .reviews-carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .reviews-carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
+  }
+
+  .reviews-carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
+  }
+
+  .reviews-carousel-container.dragging {
+    cursor: grabbing;
+  }
+
+  .reviews-carousel {
+    display: flex;
+    gap: 24px;
+    animation: scroll-reviews 20s linear infinite;
+    padding: 10px 0;
+  }
+
+  .reviews-carousel.paused {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-reviews {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .review-card {
+    background: #F5F3F0;
+    border: 1.5px solid rgba(44,24,16,0.08);
+    border-radius: 3px;
+    padding: 28px 24px;
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .review-card { width: 270px; }
+  }
+
+  .review-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .review-author .name {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--orange-primary);
+  }
+
+  .review-author .role {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 600px) {
+    .reviews-section { padding: 48px 16px; }
+    .review-text { font-size: 14px; }
+  }
+
+  /* ── CTA Section ── */
+  .cta-section {
+    padding: 60px 24px 80px;
+    background: #F5F3F0;
+    text-align: center;
+  }
+
+  .cta-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(44,24,16,0.1);
+  }
+
+  .cta-section p {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  .btn-light {
+    display: inline-block;
+    background: var(--orange-primary);
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn-light:hover { opacity: 0.85; }
+
+  /* ── Footer ── */
+  footer {
+    padding: 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-mid);
+    letter-spacing: 0.08em;
+    background: #F5F3F0;
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  footer a {
+    color: var(--orange-primary);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  /* ── Responsive ── */
+  /* ── Scroll Fade Animations ── */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-section.delay-1 { transition-delay: 0.1s; }
+  .fade-section.delay-2 { transition-delay: 0.2s; }
+  .fade-section.delay-3 { transition-delay: 0.3s; }
+
+  /* ── Element animations ── */
+  .link-btn {
+    animation: slideInUp 0.6s ease-out backwards;
+  }
+
+  .link-btn:nth-child(1) { animation-delay: 0.1s; }
+  .link-btn:nth-child(2) { animation-delay: 0.2s; }
+  .link-btn:nth-child(3) { animation-delay: 0.3s; }
+  .link-btn:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .freebie-card {
+    animation: scaleIn 0.6s ease-out;
+  }
+
+  .review-card {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @media (max-width: 600px) {
+    body { padding-top: 70px; }
+    .header { padding: 32px 16px; }
+    .menu-btn { top: 18px; left: 16px; }
+    .top-cta { top: 16px; right: 16px; padding: 12px 18px; font-size: 10px; }
+    .links-section { padding: 32px 16px; }
+    .freebies-section { padding: 48px 16px; }
+    .cta-section { padding: 48px 16px 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ MENU BUTTON ═══════ -->
+<button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+  <span id="menu-icon">☰</span>
+  <span id="menu-back" style="display: none;">← Back</span>
+</button>
+
+<!-- ═══════ TOP CTA BUTTON ═══════ -->
+<a href="https://buildwithzahara.github.io/balancedsocials_website/contact.html" class="top-cta">Work with me</a>
+
+<!-- ═══════ MOBILE MENU ═══════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/home.html" class="menu-link">Visit Website</a>
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/services.html" class="menu-link">My Services</a>
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/results.html" class="menu-link">Testimonials</a>
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/contact.html" class="menu-link">Contact Me</a>
+</div>
+
+<!-- ═══════ HEADER ═══════ -->
+<section class="header fade-section">
+  <h1>Balanced Socials</h1>
+  <p>We help business owners build an online presence that brings in real leads, without the guesswork, without the burnout, and without losing your creative voice in the process.</p>
+</section>
+
+<!-- ═══════ LINK BUTTONS ═══════ -->
+<section class="links-section fade-section">
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/contact.html" class="link-btn" onclick="closeMenu()">Work With Me</a>
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/services.html" class="link-btn">Explore My Services</a>
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/about-founder.html" class="link-btn">Meet Me</a>
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/home.html" class="link-btn">Visit My Website</a>
+</section>
+
+<!-- ═══════ FREEBIES CAROUSEL ═══════ -->
+<section class="freebies-section fade-section">
+  <div class="freebies-wrap">
+    <div class="section-header">
+      <h2>Freebies to Scale</h2>
+      <p>These are the real tools we use inside our business. Custom apps built to save you time, give you clarity, and help you make smarter decisions about your social media. Real value, zero cost.</p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="freebie-card">
+          <div class="freebie-image"><img src="https://i.ibb.co/W46Mz2Cx/Content-Pillars-Generator.png" alt="Content Blueprint"></div>
+          <div class="freebie-content">
+            <h3>Content Blueprint</h3>
+            <p>5 custom content pillars.</p>
+            <a href="https://shop.beacons.ai/balancedsocials/fea9d5cd-47b4-4e14-a89f-2ade38c5ae25" class="freebie-cta">Get free →</a>
+          </div>
+        </div>
+        <div class="freebie-card">
+          <div class="freebie-image"><img src="https://i.ibb.co/gb28HZgj/Social-Media-Audit-Checklist.png" alt="Audit Checklist"></div>
+          <div class="freebie-content">
+            <h3>Social Media Audit Checklist</h3>
+            <p>Score your profile out of 100.</p>
+            <a href="https://shop.beacons.ai/balancedsocials/27e22b5f-8c47-4c2e-b04e-3dce11e3752d" class="freebie-cta">Get free →</a>
+          </div>
+        </div>
+        <div class="freebie-card">
+          <div class="freebie-image"><img src="https://i.ibb.co/8DS1gjdy/Social-Media-ROI-Reality-Check.png" alt="ROI Reality Check"></div>
+          <div class="freebie-content">
+            <h3>ROI Reality Check</h3>
+            <p>Calculate your DIY social cost.</p>
+            <a href="https://shop.beacons.ai/balancedsocials/f7bf8d6d-eca5-448a-8d7d-ef218e88b74b" class="freebie-cta">Get free →</a>
+          </div>
+        </div>
+        <div class="freebie-card">
+          <div class="freebie-image"><img src="https://i.ibb.co/JwDZhtk6/Social-Media-Profile-Scorecard.png" alt="Profile Scorecard"></div>
+          <div class="freebie-content">
+            <h3>Profile Scorecard</h3>
+            <p>Interactive score across all platforms.</p>
+            <a href="https://shop.beacons.ai/balancedsocials/321dd6b5-8a18-408b-b466-99b4bee10d17" class="freebie-cta">Get free →</a>
+          </div>
+        </div>
+        <div class="freebie-card">
+          <div class="freebie-image"><img src="https://i.ibb.co/DchxfKj/Should-I-Hire-a-Social-Media-Manager.png" alt="Should I Hire?"></div>
+          <div class="freebie-content">
+            <h3>Should I Hire?</h3>
+            <p>10 questions. One honest answer.</p>
+            <a href="https://shop.beacons.ai/balancedsocials/049ddbdd-cb24-4a77-8cd4-52ad503d9604" class="freebie-cta">Get free →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ REVIEWS ═══════ -->
+<section class="reviews-section fade-section">
+  <div class="reviews-wrap">
+    <div class="reviews-header">
+      <h2>What clients say</h2>
+      <p>Real feedback from real businesses we've worked with</p>
+    </div>
+    <div class="reviews-carousel-container" id="reviewsCarousel">
+      <div class="reviews-carousel" id="reviewsSlider">
+        <div class="review-card">
+          <p class="review-text">"Zahara is amazing! She is enthusiastic and full of creative ideas for social media and email marketing."</p>
+          <div class="review-author">
+            <span class="name">Client</span>
+            <span class="role">Wellness Retreat</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Zahara is very good at communication, she is very quick to respond to any questions and the quality of work is awesome. Thank you."</p>
+          <div class="review-author">
+            <span class="name">Client</span>
+            <span class="role">Cosmetic Injectables Clinic</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"omg girl ur a breathe of fresh air... ur the best...this is a very good observation LOVE YOUR WORK!!"</p>
+          <div class="review-author">
+            <span class="name">Client</span>
+            <span class="role">Ecommerce Brand</span>
+          </div>
+        </div>
+        <!-- Duplicates for seamless loop -->
+        <div class="review-card">
+          <p class="review-text">"Zahara is amazing! She is enthusiastic and full of creative ideas for social media and email marketing."</p>
+          <div class="review-author">
+            <span class="name">Client</span>
+            <span class="role">Wellness Retreat</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Zahara is very good at communication, she is very quick to respond to any questions and the quality of work is awesome. Thank you."</p>
+          <div class="review-author">
+            <span class="name">Client</span>
+            <span class="role">Cosmetic Injectables Clinic</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"omg girl ur a breathe of fresh air... ur the best...this is a very good observation LOVE YOUR WORK!!"</p>
+          <div class="review-author">
+            <span class="name">Client</span>
+            <span class="role">Ecommerce Brand</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta-section fade-section" id="enquire-contact">
+  <div class="cta-wrap">
+    <h2>Ready to Talk?</h2>
+    <p>Tell me about your business. I'll understand where you are now, where you want to be, and whether we're the right fit to help you get there</p>
+    <a href="https://buildwithzahara.github.io/balancedsocials_website/contact.html" class="btn-light">Start the Conversation</a>
+  </div>
+</section>
+
+<footer>
+  A product by <a href="https://buildwithzahara.github.io/balancedsocials_website/home.html">Balanced Socials</a> — social media management & consulting
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('menuBtn');
+    const icon = document.getElementById('menu-icon');
+    const back = document.getElementById('menu-back');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    if (menu.classList.contains('open')) {
+      icon.style.display = 'none';
+      back.style.display = 'inline';
+    } else {
+      icon.style.display = 'inline';
+      back.style.display = 'none';
+    }
+  }
+
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('menuBtn');
+    const icon = document.getElementById('menu-icon');
+    const back = document.getElementById('menu-back');
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    icon.style.display = 'inline';
+    back.style.display = 'none';
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Reviews carousel drag-to-speed functionality
+  const carouselContainer = document.getElementById('reviewsCarousel');
+  const carouselSlider = document.getElementById('reviewsSlider');
+  let isDragging = false;
+  let startX = 0;
+  let currentSpeed = 20; // default animation duration in seconds
+  let dragTimeout;
+
+  carouselContainer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    carouselContainer.classList.add('dragging');
+    carouselSlider.style.animationPlayState = 'paused';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    const diff = Math.abs(e.clientX - startX);
+    // Speed increases based on drag distance (more drag = faster animation)
+    currentSpeed = Math.max(5, 20 - (diff / 30));
+    carouselSlider.style.animationDuration = currentSpeed + 's';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    carouselContainer.classList.remove('dragging');
+    carouselSlider.style.animationPlayState = 'running';
+
+    // Gradually return to normal speed
+    clearTimeout(dragTimeout);
+    dragTimeout = setTimeout(() => {
+      currentSpeed = 20;
+      carouselSlider.style.animationDuration = '20s';
+    }, 2000);
+  });
+
+  // Touch support for mobile
+  carouselContainer.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    carouselContainer.classList.add('dragging');
+    carouselSlider.style.animationPlayState = 'paused';
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const diff = Math.abs(e.touches[0].clientX - startX);
+    currentSpeed = Math.max(5, 20 - (diff / 30));
+    carouselSlider.style.animationDuration = currentSpeed + 's';
+  });
+
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+    carouselContainer.classList.remove('dragging');
+    carouselSlider.style.animationPlayState = 'running';
+
+    clearTimeout(dragTimeout);
+    dragTimeout = setTimeout(() => {
+      currentSpeed = 20;
+      carouselSlider.style.animationDuration = '20s';
+    }, 2000);
+  });
+
+  // Scroll fade animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.fade-section').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
