@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F1EFEB">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="All Founders Freedom">
+<title>All Founders Freedom | Free Strategy Video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<script>
+  (function(){
+    var m={name:"All Founders Freedom",short_name:"AFF",description:"Free custom strategy videos for founders across every industry",start_url:"./index.html",display:"standalone",orientation:"portrait",background_color:"#F1EFEB",theme_color:"#F17C1C",icons:[{src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%23F17C1C' rx='24'/%3E%3Ctext x='96' y='118' font-family='Georgia,serif' font-size='60' font-weight='bold' text-anchor='middle' fill='white'%3EAFF%3C/text%3E%3C/svg%3E",sizes:"192x192",type:"image/svg+xml"},{src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23F17C1C' rx='60'/%3E%3Ctext x='256' y='306' font-family='Georgia,serif' font-size='160' font-weight='bold' text-anchor='middle' fill='white'%3EAFF%3C/text%3E%3C/svg%3E",sizes:"512x512",type:"image/svg+xml"}]};
+    try{var b=new Blob([JSON.stringify(m)],{type:"application/manifest+json"}),u=URL.createObjectURL(b),l=document.createElement("link");l.rel="manifest";l.href=u;document.head.appendChild(l);}catch(e){}
+  })();
+</script>
+<style>
+  :root {
+    --cream: #F1EFEB;
+    --orange-primary: #F17C1C;
+    --orange-rust: #D55C2A;
+    --slate: #839193;
+    --teal: #549A94;
+    --brown-mid: #976746;
+    --text-dark: #2C1810;
+    --text-mid: #5A3E2B;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 64px;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="none" stroke="%232C1810" stroke-width="2"/></svg>') 16 16, auto;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: linear-gradient(to bottom, var(--cream) 0%, var(--cream) 70%, rgba(241,239,235,0.8) 100%);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* ── Top bar ── */
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1001;
+  }
+
+  .brand-mark {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+
+  .brand-mark span {
+    color: var(--orange-primary);
+  }
+
+  .top-cta {
+    background: linear-gradient(90deg, #F17C1C 0%, #F2893C 25%, #E86A10 50%, #F2893C 75%, #F17C1C 100%);
+    background-size: 200% 100%;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 11px 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    animation: subtleOrangeGradient 6s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(241,124,28,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .top-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(241,124,28,0.4);
+  }
+
+  @keyframes subtleOrangeGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .hero .badge {
+    display: inline-block;
+    background: rgba(241,124,28,0.1);
+    border: 1px solid rgba(241,124,28,0.3);
+    color: var(--orange-rust);
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 16px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--orange-primary);
+  }
+
+  .hero p {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 30px;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #F17C1C 0%, #F2893C 25%, #E86A10 50%, #F2893C 75%, #F17C1C 100%);
+    background-size: 200% 100%;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 18px 32px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    animation: subtleOrangeGradient 6s ease-in-out infinite;
+    box-shadow: 0 6px 16px rgba(241,124,28,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(241,124,28,0.4);
+  }
+
+  .hero-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--slate);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Section shared ── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .section-header .eyebrow {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--orange-primary);
+    margin-bottom: 10px;
+  }
+
+  .section-header h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+
+  .section-header p {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  /* ── What's included ── */
+  .included-section {
+    padding: 56px 24px;
+    background: #fff;
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  .included-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .included-card {
+    background: #F5F3F0;
+    border: 1.5px solid rgba(44,24,16,0.08);
+    border-radius: 3px;
+    padding: 28px 22px;
+    text-align: left;
+  }
+
+  .included-card .num {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--orange-primary);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .included-card h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+  }
+
+  .included-card p {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 700px) {
+    .included-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Industries ── */
+  .industries-section {
+    padding: 56px 24px;
+    background: linear-gradient(135deg, rgba(241,124,28,0.06) 0%, rgba(84,154,148,0.04) 100%);
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  .industries-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .industry-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .industry-chip {
+    background: #fff;
+    border: 1.5px solid rgba(44,24,16,0.12);
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-dark);
+    font-weight: 400;
+  }
+
+  /* ── Founder / hero note ── */
+  .founder-section {
+    padding: 64px 24px;
+    background: #fff;
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  .founder-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .founder-photo {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--orange-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 auto 22px;
+  }
+
+  .founder-wrap .eyebrow {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--orange-primary);
+    margin-bottom: 14px;
+  }
+
+  .founder-quote {
+    font-family: 'EB Garamond', serif;
+    font-size: 21px;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .founder-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .founder-role {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+  }
+
+  /* ── How it works ── */
+  .steps-section {
+    padding: 56px 24px;
+    background: #F5F3F0;
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  .steps-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    counter-reset: step;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step .step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--orange-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 auto 14px;
+  }
+
+  .step h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 700px) {
+    .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ── Form section ── */
+  .form-section {
+    padding: 64px 24px 80px;
+    background: #fff;
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  .form-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .form-embed-container {
+    background: #F5F3F0;
+    border: 1.5px solid rgba(44,24,16,0.08);
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    padding: 56px 24px 64px;
+    background: #F5F3F0;
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  .faq-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(44,24,16,0.1);
+    padding: 18px 0;
+  }
+
+  .faq-item h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .faq-item p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ── Footer ── */
+  footer {
+    padding: 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-mid);
+    letter-spacing: 0.08em;
+    background: #fff;
+    border-top: 1px solid rgba(151,103,70,0.1);
+  }
+
+  footer a {
+    color: var(--orange-primary);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  /* ── Fade animations ── */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    body { padding-top: 60px; }
+    .top-bar { padding: 0 16px; }
+    .hero { padding: 44px 16px 32px; }
+    .hero h1 { font-size: 30px; }
+    .included-section, .industries-section, .founder-section, .steps-section, .form-section, .faq-section {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ TOP BAR ═══════ -->
+<div class="top-bar">
+  <a href="https://buildwithzahara.github.io/balancedsocials_website/home.html" class="brand-mark">All Founders <span>Freedom</span></a>
+  <a href="#brand-breakdown-form" class="top-cta">Get Featured</a>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero fade-section">
+  <span class="badge">100% Free. No Catch.</span>
+  <h1>Want Your Brand Broken Down On <em>Camera</em>?</h1>
+  <p>I'm picking founders to feature in a free strategy video, which includes your own custom content strategy built around your brand and your goals, yours to keep and share.</p>
+  <a href="#brand-breakdown-form" class="hero-cta">Request My Free Strategy Video →</a>
+  <div class="hero-note">Takes 2 minutes to request. No pressure, no pitch.</div>
+</section>
+
+<!-- ═══════ WHAT'S INCLUDED ═══════ -->
+<section class="included-section fade-section">
+  <div class="included-wrap">
+    <div class="section-header">
+      <span class="eyebrow">What You Get</span>
+      <h2>A custom strategy, filmed and featured</h2>
+      <p>This isn't a written report you'll skim once and forget. It's a full content strategy for your brand, walked through on camera in a green screen breakdown video, the same style featured on the page.</p>
+    </div>
+    <div class="included-grid">
+      <div class="included-card">
+        <span class="num">01</span>
+        <h3>Full Custom Strategy</h3>
+        <p>A content plan built around your brand, your goals, and exactly how to hit them.</p>
+      </div>
+      <div class="included-card">
+        <span class="num">02</span>
+        <h3>Green Screen Breakdown</h3>
+        <p>I record a full video going over your brand, your goals, and how we'll build content to get there.</p>
+      </div>
+      <div class="included-card">
+        <span class="num">03</span>
+        <h3>Featured & Yours to Keep</h3>
+        <p>Posted on the All Founders Freedom page, and yours to share, use, and repost however you want.</p>
+      </div>
+      <div class="included-card">
+        <span class="num">04</span>
+        <h3>Public or Anonymous</h3>
+        <p>Your choice. Go public for free extra exposure, or keep your brand name hidden and just take the strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ INDUSTRIES ═══════ -->
+<section class="industries-section fade-section">
+  <div class="industries-wrap">
+    <div class="section-header">
+      <span class="eyebrow">Who It's For</span>
+      <h2>Built for founders in every industry</h2>
+      <p>It doesn't matter if you're the face of your brand or not. If you have social media for your business, or you're looking to start one, this is for you.</p>
+    </div>
+    <div class="industry-chips">
+      <span class="industry-chip">Wellness & Health</span>
+      <span class="industry-chip">Coaching & Consulting</span>
+      <span class="industry-chip">E-commerce</span>
+      <span class="industry-chip">Beauty & Aesthetics</span>
+      <span class="industry-chip">Fitness</span>
+      <span class="industry-chip">Real Estate</span>
+      <span class="industry-chip">Professional Services</span>
+      <span class="industry-chip">Hospitality</span>
+      <span class="industry-chip">Creative & Agency</span>
+      <span class="industry-chip">Tech & SaaS</span>
+      <span class="industry-chip">Nonprofit & Mission-Led</span>
+      <span class="industry-chip">And More</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOUNDER ═══════ -->
+<section class="founder-section fade-section">
+  <div class="founder-wrap">
+    <div class="founder-photo">Z</div>
+    <span class="eyebrow">Why I'm Doing This</span>
+    <p class="founder-quote">"I run a business called Balanced Socials, where I do social media management for businesses. My mission is to bring ambitious founders freedom, but I only work with four brands at a time, so I can't serve everyone. That's why I started this page: to help founders who can't afford my services, and founders who are looking to do it solo, so every founder can find their own freedom through content. In full transparency, if you like what you see and you need help, I'm here for that too."</p>
+    <div class="founder-name">Zahara</div>
+    <div class="founder-role">Founder, Balanced Socials</div>
+  </div>
+</section>
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section class="steps-section fade-section">
+  <div class="steps-wrap">
+    <div class="section-header">
+      <span class="eyebrow">How It Works</span>
+      <h2>Simple, honest, free</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Request It</h3>
+        <p>Fill out the short form below with your brand and a bit about your business.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>I Build Your Strategy</h3>
+        <p>I dig into your brand and your goals, and map out exactly how your content should work.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You Get Featured</h3>
+        <p>I film a green screen breakdown covering your brand and the strategy, posted on the page and yours to keep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FORM ═══════ -->
+<section class="form-section fade-section" id="brand-breakdown-form">
+  <div class="form-wrap">
+    <div class="section-header">
+      <span class="eyebrow">Request Yours</span>
+      <h2>Get your free strategy video</h2>
+      <p>Tell me a bit about your brand and where you want it to go. I'll take it from there.</p>
+    </div>
+    <div class="hero-note" style="text-align:center; margin-bottom: 14px;">The form below might take a second to load.</div>
+    <div class="form-embed-container">
+      <div class="hb-p-6a43c9e7bf42d45ba87f394d-1"></div>
+      <img height="1" width="1" style="display:none" src="https://www.honeybook.com/p.png?pid=6a43c9e7bf42d45ba87f394d">
+      <script>
+        (function(h,b,s,n,i,p,e,t) {
+          h._HB_ = h._HB_ || {};h._HB_.pid = i;;;;
+          t=b.createElement(s);t.type="text/javascript";t.async=!0;t.src=n;
+          e=b.getElementsByTagName(s)[0];e.parentNode.insertBefore(t,e);
+      })(window,document,"script","https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js","6a43c9e7bf42d45ba87f394d");
+      </script>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faq-section fade-section">
+  <div class="faq-wrap">
+    <div class="section-header">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you request</h2>
+    </div>
+    <div class="faq-item">
+      <h3>Is this actually free?</h3>
+      <p>Yes. No card, no strings. It's a genuine strategy and video, not a bait-and-switch.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Will my video be public?</h3>
+      <p>Yes, at some point it goes up on the page, that's the point. But you have the option to have it anonymous or public. You can keep your brand name hidden, or make it public, which gets you extra publicity for free.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if I'm not on social media yet?</h3>
+      <p>Still worth requesting. I'll look at whatever brand presence you do have, whether that's your website, socials, or how you talk about your business, and build the strategy from there.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Will I be pitched something after?</h3>
+      <p>You'll get the strategy and video regardless. If it looks like working together further would help, I'll mention it, but there's zero obligation.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does it take to get my video?</h3>
+      <p>I get a lot of requests, so it can take a bit. As soon as yours is submitted, I'll be going through them in order, and you'll get notified by email once yours is posted. Keep an eye on the page too.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  A free initiative from me at <a href="https://buildwithzahara.github.io/balancedsocials_website/home.html">Balanced Socials</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.fade-section').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
